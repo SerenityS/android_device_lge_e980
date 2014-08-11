@@ -111,3 +111,12 @@ service fuse_usbdisk0 /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/usbdisk0 
     class late_start
     disabled
 
+service cantata-run /system/bin/sh /system/etc/cantata.sh
+    class late_start
+    user root
+    disabled
+    oneshot
+	
+ on property:sys.boot_completed=1
+    start cantata-run  
+

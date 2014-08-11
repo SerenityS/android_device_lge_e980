@@ -37,13 +37,48 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/mixer_paths.xml:system/etc/mixer_paths.xml
 
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/thermald-geefhd.conf:system/etc/thermald.conf
+	$(LOCAL_PATH)/thermald.conf:system/etc/thermald.conf \
+	$(LOCAL_PATH)/thermald-8960.conf:system/etc/thermald-8960.conf \
+	$(LOCAL_PATH)/thermald-8960ab.conf:system/etc/thermald-8960ab.conf \
+	$(LOCAL_PATH)/thermal-engine-8960.conf:system/etc/thermal-engine-8960.conf	
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/initlogo.rle:root/initlogo.rle888 \
 	$(LOCAL_PATH)/init.geefhd.rc:root/init.geefhd.rc \
 	$(LOCAL_PATH)/fstab.geefhd:root/fstab.geefhd \
 	$(LOCAL_PATH)/ueventd.geefhd.rc:root/ueventd.geefhd.rc
+
+# Alsa audio For Korean varient 
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/alsa/alsa_amixer:system/xbin/alsa_amixer \
+	$(LOCAL_PATH)/alsa/alsa_amixer:system/xbin/alsa_aplay \
+	$(LOCAL_PATH)/alsa/alsa_amixer:system/xbin/alsa_ctl \
+	$(LOCAL_PATH)/alsa/libalsautils.so:system/lib/libalsautils.so \
+	$(LOCAL_PATH)/alsa/libasound.so:system/lib/libasound.so \
+	$(LOCAL_PATH)/alsa/libaudioalsa.so:system/lib/libaudioalsa.so \
+	$(LOCAL_PATH)/alsa/libtinyalsa.so:system/lib/libtinyalsa.so \
+	$(LOCAL_PATH)/alsa/libalsautils.so:system/lib/libalsautils.so	\
+	$(LOCAL_PATH)/alsa/alsa.conf:system/usr/share/alsa/alsa.conf \
+	$(LOCAL_PATH)/alsa/aliases.conf:system/usr/share/alsa/cards/aliases.conf \
+	$(LOCAL_PATH)/alsa/center_lfe.conf:system/usr/share/alsa/pcm/center_lfe.conf \
+	$(LOCAL_PATH)/alsa/default.conf:system/usr/share/alsa/pcm/default.conf \
+	$(LOCAL_PATH)/alsa/dmix.conf:system/usr/share/alsa/pcm/dmix.conf \
+	$(LOCAL_PATH)/alsa/dpl.conf:system/usr/share/alsa/pcm/dpl.conf \
+	$(LOCAL_PATH)/alsa/dsnoop.conf:system/usr/share/alsa/pcm/dsnoop.conf \
+	$(LOCAL_PATH)/alsa/front.conf:system/usr/share/alsa/pcm/front.conf \
+	$(LOCAL_PATH)/alsa/iec958.conf:system/usr/share/alsa/pcm/iec958.conf \
+	$(LOCAL_PATH)/alsa/modem.conf:system/usr/share/alsa/pcm/modem.conf \
+	$(LOCAL_PATH)/alsa/rear.conf:system/usr/share/alsa/pcm/rear.conf \
+	$(LOCAL_PATH)/alsa/side.conf:system/usr/share/alsa/pcm/side.conf \
+	$(LOCAL_PATH)/alsa/surround40.conf:system/usr/share/alsa/pcm/surround40.conf \
+	$(LOCAL_PATH)/alsa/surround41.conf:system/usr/share/alsa/pcm/surround41.conf \
+	$(LOCAL_PATH)/alsa/surround50.conf:system/usr/share/alsa/pcm/surround50.conf \
+	$(LOCAL_PATH)/alsa/surround51.conf:system/usr/share/alsa/pcm/surround51.conf \
+	$(LOCAL_PATH)/alsa/surround71.conf:system/usr/share/alsa/pcm/surround71.conf \
+	$(LOCAL_PATH)/alsa/cantata.sh:system/etc/cantata.sh
+
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
 
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
@@ -53,6 +88,9 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/init.qcom.post_boot.sh:system/etc/wifi/init.qcom.post_boot.sh
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.sf.lcd_density=480
