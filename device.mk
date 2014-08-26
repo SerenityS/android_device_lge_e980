@@ -75,10 +75,7 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/alsa/surround50.conf:system/usr/share/alsa/pcm/surround50.conf \
 	$(LOCAL_PATH)/alsa/surround51.conf:system/usr/share/alsa/pcm/surround51.conf \
 	$(LOCAL_PATH)/alsa/surround71.conf:system/usr/share/alsa/pcm/surround71.conf \
-	$(LOCAL_PATH)/alsa/cantata.sh:system/etc/cantata.sh
-
-PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
+	$(LOCAL_PATH)/alsa/cantata.sh:system/etc/init.d/01cantata
 
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
